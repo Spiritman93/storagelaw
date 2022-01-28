@@ -27,6 +27,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring.boot.version>2.6.3</spring.boot.version>
+		<h2.database.version>2.0.206</h2.database.version>
 	</properties>
 
 	<dependencyManagement>
@@ -72,6 +73,11 @@
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring.boot.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${h2.database.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -85,11 +91,12 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
+				<!--раскомментить этот плагин и сделать как написано в pom'ке rest'а-->
+<!--				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
 					<version>${spring.boot.version}</version>
-				</plugin>
+				</plugin>-->
 			</plugins>
 		</pluginManagement>
 	</build>

@@ -13,8 +13,4 @@ public class RestControllerLawstorage {
         return "Hello, it`s startpage. It`s testing!";
     }
 
-
-
-
-
 }
