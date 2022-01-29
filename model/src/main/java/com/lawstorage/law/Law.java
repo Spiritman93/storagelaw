@@ -12,6 +12,12 @@ public class Law {
     private String lawName;
     private int lawNumber;
 
+    public Law(String lawType, String lawName, int lawNumber){
+        this.lawType = lawType;
+        this.lawName = lawName;
+        this.lawNumber = lawNumber;
+    }
+
     public String getLawType() {
         return lawType;
     }
