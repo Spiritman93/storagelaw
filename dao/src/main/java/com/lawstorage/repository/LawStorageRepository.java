@@ -5,6 +5,6 @@ import com.lawstorage.law.Law;
 
 
 
-public interface LawstorageRepository extends JpaRepository <Law, Long> {
+public interface LawStorageRepository extends JpaRepository <Law, Long> {
 
 }
