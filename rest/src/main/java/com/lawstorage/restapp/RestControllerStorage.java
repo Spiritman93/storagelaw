@@ -3,9 +3,10 @@ package com.lawstorage.restapp;
 
 import com.lawstorage.law.Law;
 import com.lawstorage.repository.LawstorageRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+
+
+import java.util.List;
 
 
 @RestController
@@ -24,8 +25,19 @@ public class RestControllerStorage {
     public Law getLaw() {
         Law law = new Law("Law", "O NPA", 1);
         return law;
+    }
+
+    @GetMapping("/testfind")
+    public List<Law> findAllLaw (){ return (List<Law>)lawstorageRepository.findAll();
+    }
+
+    @PostMapping("/testallpage")
+    public void testPost(@RequestBody Law newLaw) {
+        lawstorageRepository.save(newLaw);
 
     }
+
+
 
 
 

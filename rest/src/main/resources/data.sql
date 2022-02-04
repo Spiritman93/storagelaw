@@ -1,0 +1,1 @@
+INSERT INTO LAW (law_type, law_name, law_number) VALUES ('Law', 'Ob informacii  ', 2)
