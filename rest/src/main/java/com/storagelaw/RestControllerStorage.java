@@ -1,8 +1,6 @@
-package com.lawstorage.restapp;
+package com.storagelaw;
 
 
-import com.lawstorage.law.Law;
-import com.lawstorage.repository.LawStorageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +10,8 @@ import java.util.List;
 @RestController
 public class RestControllerStorage {
 
-
-    LawStorageRepository lawStorageRepository;
+    @Autowired
+    LawRepository lawRepository;
 
     @GetMapping("/startpage")
     public String startPage() {
@@ -29,20 +27,20 @@ public class RestControllerStorage {
 
     @GetMapping("/testfind")
     public List<Law> findAllLaw() {
-        return (List<Law>) lawStorageRepository.findAll();
+        return (List<Law>) lawRepository.findAll();
     }
 
     @PostMapping("/testallpage")
     public void testPost(@RequestBody Law newLaw) {
-        lawStorageRepository.save(newLaw);
+        lawRepository.save(newLaw);
 
     }
 
     @PutMapping
     public String updateLawData(@RequestBody Law law) {
         System.out.println("Update Law" + law.toString());
-        if (lawStorageRepository.findById(law.getLawId()).isPresent()) {
-            lawStorageRepository.save(law);
+        if (lawRepository.findById(law.getLawId()).isPresent()) {
+            lawRepository.save(law);
         } else {
             System.out.println("impossible update Law " + law.toString());
         }
@@ -52,7 +50,7 @@ public class RestControllerStorage {
     @DeleteMapping("/delete{id}")
     public void deleteLaw(@RequestParam Long  id){
         System.out.println("deleting Law by" + id);
-        lawStorageRepository.deleteById(id);
+        lawRepository.deleteById(id);
     }
 
 

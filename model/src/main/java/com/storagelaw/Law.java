@@ -1,4 +1,4 @@
-package com.lawstorage.law;
+package com.storagelaw;
 
 import javax.persistence.*;
 
