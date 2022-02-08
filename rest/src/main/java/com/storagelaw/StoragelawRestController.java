@@ -30,9 +30,11 @@ public class StoragelawRestController {
         return (List<Law>) lawRepository.findAll();
     }
 
-    @PostMapping("/testallpage")
-    public void testPost(@RequestBody Law newLaw) {
+    @PostMapping("/testpost")
+        public String testPost(@RequestBody Law newLaw) {
+        System.out.println("New law detected:" + newLaw.toString());
         lawRepository.save(newLaw);
+        return "post sucessfull";
 
     }
 
@@ -47,8 +49,8 @@ public class StoragelawRestController {
         return "Law`s updateing" + law.toString();
     }
 
-    @DeleteMapping("/delete{id}")
-    public void deleteLaw(@RequestParam Long  id){
+    @DeleteMapping
+    public void deleteLaw(@RequestParam Long id){
         System.out.println("deleting Law by" + id);
         lawRepository.deleteById(id);
     }
