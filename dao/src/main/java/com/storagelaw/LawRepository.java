@@ -1,10 +1,9 @@
 package com.storagelaw;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
+public interface LawRepository extends CrudRepository<Law, Long> {
 
-
-
-public interface LawRepository extends JpaRepository <Law, Long> {
+    public void findAllByLawId(Long lawId);
 
 }
