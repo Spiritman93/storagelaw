@@ -1,1 +1,0 @@
-INSERT INTO LAW (lawid, lawtype, lawname, lawnumber) VALUES ('','Law', 'Ob informacii  ', 2)
