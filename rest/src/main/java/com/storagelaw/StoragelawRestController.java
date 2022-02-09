@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+
 @RestController
 public class StoragelawRestController {
 
@@ -49,12 +50,16 @@ public class StoragelawRestController {
         return "Law`s updateing" + law.toString();
     }
 
+    //("/{lawId}")
+    // (@PathVariable Long id)   // DEL -> localhost:8080/1
+    // public void deleteLaw(@PathVariable Long lawId){
+    // (value = "adsada")DEL -> localhost:8080?asdasd=1
+    // ?lawId=
+
     @DeleteMapping
-    public void deleteLaw(@RequestParam Long id){
-        System.out.println("deleting Law by" + id);
-        lawRepository.deleteById(id);
+    public void deleteLaw(@RequestParam Long lawId){
+        System.out.println("deleting Law by" + lawId);
+        lawRepository.deleteById(lawId);
     }
-
-
 
 }
