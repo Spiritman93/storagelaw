@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Law {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO  )
     Long lawId;
     private String lawType;
     private String lawName;

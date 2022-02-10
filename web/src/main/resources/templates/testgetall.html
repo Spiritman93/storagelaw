@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Get all</title>
+</head>
+
+<html>
+<body bgcolor=#A52A2A>
+<h1>Table of laws</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">lawId</th>
+        <th scope="col">lawType</th>
+        <th scope="col">lawName</th>
+        <th scope="col">lawNumber</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="law : ${Laws}">
+        <th th:text="${law.lawId}"></th>
+        <td th:text="${law.lawType}"></td>
+        <td th:text="${law.lawName}"></td>
+        <td th:text="${law.lawNumber}"></td>
+        </span>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<script>
+
+</script>
+
+</body>
+
+</html>
