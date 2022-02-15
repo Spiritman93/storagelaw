@@ -35,7 +35,7 @@ public class StoragelawRestController {
         public String testPost(@RequestBody Law newLaw) {
         System.out.println("New law detected:" + newLaw.toString());
         lawRepository.save(newLaw);
-        return "post sucessfull";
+        return "post successfull";
 
     }
 

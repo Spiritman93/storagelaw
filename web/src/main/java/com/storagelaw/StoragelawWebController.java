@@ -20,7 +20,13 @@ public class StoragelawWebController {
         model.addAttribute("Laws",
                 restTemplate.getForObject(REST_URL + "/testfind", List.class));
         return "testgetall";
+    }
 
+    @PostMapping("/testpost")
+    public String postLaw (Law law){
+        System.out.println("post successfull");
+        restTemplate.postForEntity(REST_URL + "/testpost",law, Law.class);
+        return "redirect: /testgetall";
     }
 
 
