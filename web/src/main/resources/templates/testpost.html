@@ -8,31 +8,33 @@
     <title>Post Law</title>
 </head>
 
+<body>
 <body bgcolor=#A52A2A>
 
 <section id="law">
     <div class="card" style="max-width: 1000px;">
         <div class="card-body">
-            <form id="lawForm" th:action="/testpost" th:object="${Law}" th:method="@{post}">
+            <form id="lawForm" th:action="@{/testpost}" th:object="${Law}" th:method="@{post}">
                 <!--input hidden id-->
                 <div class="mb-3">
                     <label for="postLawType" class="form-label">LawType</label>
-                    <input type="lawType" class="form-control" id="postLawType"
-                           aria-describedby="postLawTypeHelp" th:field="*{lawType}">
+                    <input type="text" class="form-control"
+                           id="postLawType" aria-describedby="postLawTypeHelp"
+                           th:class="form-control" th:field="*{lawType}">
                     <div id="postLawTypeHelp" class="form-text">You`ll write your LawType</div>
                 </div>
         <br>
                 <div class="mb-3">
                     <label for="postLawName" class="form-label">LawName</label>
-                    <input type="lawName" class="form-control" id="postLawName"
+                    <input type="text" class="form-control" id="postLawName"
                            aria-describedby="postLawNameHelp" th:field="*{lawName}">
                 <div id="postLawNameHelp" class="form-text">You`ll write your LawName</div>
                 </div>
         <br>
                 <div class="mb-3">
                     <label for="postLawNumber" class="form-label">LawNumber</label>
-                    <input type="lawNumber" class="form-control" id="postLawNumber"
-                           aria-describedby="postLawNumberHelp", th:field="*{lawNumber}">
+                    <input type="number" class="form-control" id="postLawNumber"
+                           aria-describedby="postLawNumberHelp" th:field="*{lawNumber}">
                 <div id="postLawNumberHelp" class="form-text">You`ll write your LawNumber</div>
                 </div>
         <button type="add" class="btn btn-primary" th:onclick="@{document.forms['lawForm'].submit();}">Add</button>

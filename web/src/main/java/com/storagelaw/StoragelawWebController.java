@@ -1,5 +1,6 @@
 package com.storagelaw;
 
+import org.springframework.boot.json.JsonParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,19 +23,20 @@ public class StoragelawWebController {
         return "testgetall";
     }
 
-    @PostMapping("/testpost")
-    public String postLaw (Law law){
-        System.out.println("post successfull");
-        restTemplate.postForEntity(REST_URL + "/testpost",law, Law.class);
-        return "redirect: /testgetall";
+    @GetMapping("/testpost")
+    public String addLaw (Model model){
+        System.out.println("testpost page is loading");
+        Law law = new Law();
+        model.addAttribute("Law", law);
+        return "testpost";
     }
 
-
-
-
-
-
-
+    @PostMapping("/testpost")
+    public String postLaw (Law law) throws Exception{
+        System.out.println("post successfull");
+        restTemplate.postForObject(REST_URL + "/testpost",law, Law.class);
+        return "redirect:/testgetall";
+    }
 
 
 }

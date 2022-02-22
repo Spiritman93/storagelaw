@@ -2,6 +2,7 @@ package com.storagelaw;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class StoragelawRestController {
     }
 
     @PostMapping("/testpost")
+    @ResponseStatus(HttpStatus.CREATED)
         public String testPost(@RequestBody Law newLaw) {
         System.out.println("New law detected:" + newLaw.toString());
         lawRepository.save(newLaw);
