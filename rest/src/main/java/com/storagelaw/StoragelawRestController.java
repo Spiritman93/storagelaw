@@ -34,11 +34,10 @@ public class StoragelawRestController {
 
     @PostMapping("/testpost")
     @ResponseStatus(HttpStatus.CREATED)
-        public String testPost(@RequestBody Law newLaw) {
+        public Law testPost(@RequestBody Law newLaw) {
         System.out.println("New law detected:" + newLaw.toString());
         lawRepository.save(newLaw);
-        return "post successfull";
-
+        return new Law();
     }
 
     @PutMapping

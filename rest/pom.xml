@@ -14,7 +14,8 @@
     <groupId>com.storagelaw</groupId>
     <artifactId>rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+
+    <packaging>war</packaging> <!-- war or jar for exemple -->
 
     <dependencies>
 

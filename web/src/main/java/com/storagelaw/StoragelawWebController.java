@@ -35,8 +35,14 @@ public class StoragelawWebController {
     public String postLaw (Law law) throws Exception{
         System.out.println("post successfull");
         restTemplate.postForObject(REST_URL + "/testpost",law, Law.class);
-        return "redirect:/testgetall";
+        return "redirect:testgetall";
     }
 
+    /*@DeleteMapping("/delete{id}")
+    public void String deleteLaw (Law law) throws Exception{
+        System.out.println("delete successfull");
+
+
+    }*/
 
 }
