@@ -18,7 +18,7 @@ public class StoragelawRestController {
     @GetMapping("/startpage")
     public String startPage() {
         System.out.println("it`s working");
-        return "Hello, it`s startpage. It`s testing!";
+        return "Hello, it`s startpage. It`s testing! 777";
     }
 
     @GetMapping("/testlawpage")
