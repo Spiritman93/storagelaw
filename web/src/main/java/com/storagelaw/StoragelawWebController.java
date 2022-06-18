@@ -17,7 +17,7 @@ public class StoragelawWebController {
 
     @GetMapping("/testgetall")
     public String getAllLaw (Model model){
-        System.out.println("Test of get all" );
+        System.out.println("Test of get all 18062022" );
         model.addAttribute("Laws",
                 restTemplate.getForObject(REST_URL + "/testfind", List.class));
         return "testgetall";
