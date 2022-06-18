@@ -13,7 +13,8 @@ import java.util.List;
 public class StoragelawWebController {
 
     private RestTemplate restTemplate = new RestTemplate();
-    public static String REST_URL = "http://localhost:8080";
+    // public static String REST_URL = "http://localhost:8080";
+    public static String REST_URL = "http://localhost:8070/rest-0.0.1-SNAPSHOT";
 
     @GetMapping("/testgetall")
     public String getAllLaw (Model model){
