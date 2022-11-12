@@ -10,6 +10,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin("http://localhost:4201/")
 public class StoragelawRestController {
 
     @Autowired
