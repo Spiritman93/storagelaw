@@ -33,11 +33,16 @@ public class StoragelawRestController {
         return (List<Law>) lawRepository.findAll();
     }
 
+    @GetMapping("/getLaw/{id}")
+    public Law getLaw(@PathVariable Long id){
+        Law law = lawRepository.findById(id).orElse(new Law());
+        return getLaw();
+
     @PostMapping("/testpost")
     @ResponseStatus(HttpStatus.CREATED)
-        public Law testPost(@RequestBody Law newLaw) {
-        System.out.println("New law detected:" + newLaw.toString());
-        lawRepository.save(newLaw);
+        public void testPost(@RequestBody Law law) {
+        System.out.println("New law detected:" + law.toString());
+        lawRepository.save(law);
         return new Law();
     }
 
